@@ -1,0 +1,25 @@
+#连接数据的配置信息
+isZK: false
+dbconfig:
+  ip: 127.0.0.1
+  serverPort: 8066
+  managerPort: 9066 
+  user: root
+  password: 123
+#测试用例的文件路径
+testCaseConfigPath:
+  path:
+    - ./mycat_config/singleNode
+    - ./mycat_config/multiNode
+    - ./mycat_config/globalTable
+    - ./mycat_config/defaultNodeTable
+    - ./mycat_config/innerSubTable
+    - ./mycat_config/multiNodeMerge
+    - ./mycat_config/transaction
+    - ./mycat_config/routeFunction
+    - ./mycat_config/hint
+    - ./mycat_config/sequence
+    - ./mycat_config/others
+    
+ 
+

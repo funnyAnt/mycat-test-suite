@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2020, OpenCloudDB/MyCAT and/or its affiliates. All rights
+ * reserved. DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software;Designed and Developed mainly by many Chinese
+ * opensource volunteers. you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License version 2 only, as published by the
+ * Free Software Foundation.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License version 2 for more
+ * details (a copy is included in the LICENSE file that accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version 2
+ * along with this work; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ * 
+ * Any questions about this component can be directed to it's project Web
+ * address https://code.google.com/p/opencloudb/.
+ *
+ */
+package io.mycat.test.config.loader;
+
+import io.mycat.test.config.SystemConfig;
+import io.mycat.test.utils.YamlUtil;
+
+/**
+ * 定义数据库的连接配置和用例配置文件路径信息
+ * 
+ * @author funnyAnt
+ *
+ */
+public class SystemConfigLoader implements ConfigLoader<SystemConfig> {
+    private static String DEFAULT_FILENAME = "application.yml";
+    private String fileName = null;
+
+    
+    public SystemConfigLoader(String fileName) {
+        super();
+        this.fileName = fileName;
+    }
+
+    @Override
+    public SystemConfig load() {
+        // TODO Auto-generated method stub
+        if (fileName == null) {
+            return load(DEFAULT_FILENAME);
+        } else {
+            return load(fileName);
+        }
+    }
+
+    private SystemConfig load(String fileName) {
+        // TODO Auto-generated method stub
+        if (fileName == null) {
+            return null;
+        }
+
+        SystemConfig config = null;// new SystemConfig();
+
+        Object root = YamlUtil.load(fileName);
+
+        return config;
+
+    }
+
+}
